@@ -248,9 +248,21 @@ env:
 
 See [DEVELOPMENT.md](./DEVELOPMENT.md) for information on building and testing the SDK.
 
+## Documentation
+
+See the [Stytch API Reference](https://stytch.com/docs/api) for complete documentation on the Management API endpoints.
+
 ## Support
 
-If you have questions or need help, please contact [support@stytch.com](mailto:support@stytch.com).
+If you've found a bug, [open an issue](https://github.com/stytchauth/stytch-management-node/issues/new)!
+
+If you have questions or want help troubleshooting, join us in [Slack](https://stytch.com/docs/resources/support/overview) or email support@stytch.com.
+
+If you've found a security vulnerability, please follow our [responsible disclosure instructions](https://stytch.com/docs/resources/security-and-trust/security#:~:text=Responsible%20disclosure%20program).
+
+## Code of Conduct
+
+Everyone interacting in the Stytch project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
