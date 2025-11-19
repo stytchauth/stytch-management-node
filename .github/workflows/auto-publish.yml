@@ -11,20 +11,30 @@ jobs:
     permissions:
       contents: write
       id-token: write
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           registry-url: "https://registry.npmjs.org"
           node-version: "18"
 
+      - name: Update npm
+        run: npm install -g npm@latest
+
       - name: Install
         run: npm install
 
+      - name: Run CI
+        run: npm ci
+
       - name: Build
-        run: npm run build
+        run: npm run build --if-present
+
+      - name: Run tests
+        run: npm test
 
       - name: Get version
         id: version
