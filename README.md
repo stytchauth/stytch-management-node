@@ -2,7 +2,7 @@
 
 The Stytch Management Node.js library makes it easy to use Stytch's Programmatic Workspace Actions API in Node.js applications.
 
-This library requires Node.js 18 or later.
+This library requires Node.js 20 or later.
 
 > [!WARNING]
 > This SDK is currently in alpha with potential breaking changes. Use with caution in production environments.
