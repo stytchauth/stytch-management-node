@@ -1,5 +1,5 @@
 {
-  "name": "stytch-management-node",
+  "name": "stytch-management",
   "version": "1.0.0",
   "description": "Official Stytch Management API library for Node.js",
   "types": "./types/lib/index.d.ts",

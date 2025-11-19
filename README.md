@@ -10,7 +10,7 @@ This library requires Node.js 18 or later.
 ## Install
 
 ```bash
-npm install stytch-management-node
+npm install stytch-management
 ```
 
 ## Pre-requisites
@@ -47,7 +47,7 @@ This library supports project- and environment-level actions on the following re
 ### Create a new API client:
 
 ```typescript
-import { ManagementClient, ClientConfig } from 'stytch-management-node';
+import { ManagementClient, ClientConfig } from "stytch-management";
 
 // Set your Stytch Management API credentials.
 const config: ClientConfig = {
@@ -61,7 +61,7 @@ const client = new ManagementClient(config);
 ### Create a new B2B project:
 
 ```typescript
-import { projects } from 'stytch-management-node';
+import { projects } from "stytch-management";
 
 const response = await client.projects.create({
   name: "My new project",
@@ -75,14 +75,14 @@ console.log(`Created project: ${newProject.projectSlug}`);
 ### Get the live environment in the new project:
 
 ```typescript
-import { environments } from 'stytch-management-node';
+import { environments } from "stytch-management";
 
 const response = await client.environments.getAll({
   projectSlug: newProject.projectSlug,
 });
 
 const liveEnv = response.environments.find(
-  (env) => env.type === "LIVE" as environments.EnvironmentType
+  (env) => env.type === ("LIVE" as environments.EnvironmentType)
 );
 console.log(`Live environment: ${liveEnv?.environmentSlug}`);
 ```
@@ -120,7 +120,7 @@ const response = await client.sdk.getConsumerConfig({
   environmentSlug: liveEnv.environmentSlug,
 });
 
-console.log('Consumer SDK config:', response.config);
+console.log("Consumer SDK config:", response.config);
 ```
 
 ## Type Safety
@@ -128,7 +128,7 @@ console.log('Consumer SDK config:', response.config);
 All request and response types are fully typed. Import them from the specific resource namespaces:
 
 ```typescript
-import { projects, environments, secrets } from 'stytch-management-node';
+import { projects, environments, secrets } from "stytch-management";
 
 // Use typed requests
 const createRequest: projects.CreateRequest = {
@@ -137,13 +137,15 @@ const createRequest: projects.CreateRequest = {
 };
 
 // Responses are also typed
-const response: projects.CreateResponse = await client.projects.create(createRequest);
+const response: projects.CreateResponse = await client.projects.create(
+  createRequest
+);
 ```
 
 ## Error Handling
 
 ```typescript
-import { ManagementStytchError } from 'stytch-management-node';
+import { ManagementStytchError } from "stytch-management";
 
 try {
   await client.projects.get({ projectSlug: "invalid-slug" });
@@ -209,6 +211,7 @@ The test suite includes integration tests for:
 - **Country Code Allowlist** - SMS and WhatsApp country code management
 
 Each test suite:
+
 - ✓ Creates disposable projects/environments
 - ✓ Tests all CRUD operations
 - ✓ Validates error handling
