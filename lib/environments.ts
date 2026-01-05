@@ -23,6 +23,7 @@ export interface Environment {
   user_impersonation_enabled: boolean;
   // ZeroDowntimeSessionMigrationURL is the OIDC-compliant UserInfo endpoint for session migration.
   zero_downtime_session_migration_url: string;
+  use_custom_domain_in_magic_link_emails: boolean;
   /**
    * Indicates whether users in the environment who get locked out should automatically get an unlock email
    * magic link.
@@ -50,6 +51,7 @@ export interface Environment {
    * created through Dynamic Client Registration (DCR).
    */
   idp_dynamic_client_registration_access_token_template_content: string;
+  project_id: string;
   // The environment's type.
   type?: "LIVE" | "TEST" | string;
   // The ISO-8601 timestamp for when the resource was created.
@@ -207,6 +209,7 @@ export interface UpdateRequest {
   user_impersonation_enabled?: boolean;
   // ZeroDowntimeSessionMigrationURL is the OIDC-compliant UserInfo endpoint for session migration.
   zero_downtime_session_migration_url?: string;
+  use_custom_domain_in_magic_link_emails?: boolean;
   /**
    * Indicates whether users in the environment who get locked out should automatically get an unlock email
    * magic link.
@@ -379,6 +382,8 @@ export class Environments {
         user_impersonation_enabled: data.user_impersonation_enabled,
         zero_downtime_session_migration_url:
           data.zero_downtime_session_migration_url,
+        use_custom_domain_in_magic_link_emails:
+          data.use_custom_domain_in_magic_link_emails,
         user_lock_self_serve_enabled: data.user_lock_self_serve_enabled,
         user_lock_threshold: data.user_lock_threshold,
         user_lock_ttl: data.user_lock_ttl,

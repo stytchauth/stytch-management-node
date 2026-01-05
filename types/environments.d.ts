@@ -7,6 +7,7 @@ export interface Environment {
     cross_org_passwords_enabled: boolean;
     user_impersonation_enabled: boolean;
     zero_downtime_session_migration_url: string;
+    use_custom_domain_in_magic_link_emails: boolean;
     /**
      * Indicates whether users in the environment who get locked out should automatically get an unlock email
      * magic link.
@@ -33,6 +34,7 @@ export interface Environment {
      * created through Dynamic Client Registration (DCR).
      */
     idp_dynamic_client_registration_access_token_template_content: string;
+    project_id: string;
     type?: "LIVE" | "TEST" | string;
     created_at?: string;
 }
@@ -127,6 +129,7 @@ export interface UpdateRequest {
     cross_org_passwords_enabled?: boolean;
     user_impersonation_enabled?: boolean;
     zero_downtime_session_migration_url?: string;
+    use_custom_domain_in_magic_link_emails?: boolean;
     /**
      * Indicates whether users in the environment who get locked out should automatically get an unlock email
      * magic link.
