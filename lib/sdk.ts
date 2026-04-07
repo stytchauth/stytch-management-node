@@ -56,6 +56,7 @@ export interface B2BConfig {
   passwords?: B2BPasswordsConfig;
   // Cookies is the cookies configuration for the SDK.
   cookies?: B2BCookiesConfig;
+  user_impersonation?: B2BUserImpersonationConfig;
 }
 
 export interface B2BCookiesConfig {
@@ -139,6 +140,14 @@ export interface B2BTOTPsConfig {
   enabled: boolean;
 }
 
+export interface B2BUserImpersonationConfig {
+  /**
+   * Enable authenticating member impersonation tokens. Allow the SDK to authenticate a member impersonation
+   * token for a full session as an impersonated member.
+   */
+  enabled: boolean;
+}
+
 export interface ConsumerBasicConfig {
   /**
    * Enabled indicates whether the consumer project SDK is enabled. This allows the SDK to manage user and
@@ -186,6 +195,7 @@ export interface ConsumerConfig {
   passwords?: ConsumerPasswordsConfig;
   // Cookies is the cookies configuration for the SDK.
   cookies?: ConsumerCookiesConfig;
+  user_impersonation?: ConsumerUserImpersonationConfig;
 }
 
 export interface ConsumerCookiesConfig {
@@ -274,6 +284,14 @@ export interface ConsumerTOTPsConfig {
   // CreateTOTPs indicates whether TOTP creation is enabled in the SDK.
   create_totps: boolean;
   // Indicates whether TOTP endpoints are enabled in the SDK.
+  enabled: boolean;
+}
+
+export interface ConsumerUserImpersonationConfig {
+  /**
+   * Enable authenticating member impersonation tokens. Allow the SDK to authenticate a member impersonation
+   * token for a full session as an impersonated member.
+   */
   enabled: boolean;
 }
 
