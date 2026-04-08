@@ -30,6 +30,7 @@ export interface B2BConfig {
     DFPPA?: B2BDFPPAConfig;
     passwords?: B2BPasswordsConfig;
     cookies?: B2BCookiesConfig;
+    user_impersonation?: B2BUserImpersonationConfig;
 }
 export interface B2BCookiesConfig {
     http_only: "DISABLED" | "ENABLED" | "ENFORCED" | string;
@@ -90,6 +91,13 @@ export interface B2BTOTPsConfig {
     create_totps: boolean;
     enabled: boolean;
 }
+export interface B2BUserImpersonationConfig {
+    /**
+     * Enable authenticating member impersonation tokens. Allow the SDK to authenticate a member impersonation
+     * token for a full session as an impersonated member.
+     */
+    enabled: boolean;
+}
 export interface ConsumerBasicConfig {
     /**
      * Enabled indicates whether the consumer project SDK is enabled. This allows the SDK to manage user and
@@ -120,6 +128,7 @@ export interface ConsumerConfig {
     biometrics?: ConsumerBiometricsConfig;
     passwords?: ConsumerPasswordsConfig;
     cookies?: ConsumerCookiesConfig;
+    user_impersonation?: ConsumerUserImpersonationConfig;
 }
 export interface ConsumerCookiesConfig {
     http_only: "DISABLED" | "ENABLED" | "ENFORCED" | string;
@@ -181,6 +190,13 @@ export interface ConsumerSessionsConfig {
 }
 export interface ConsumerTOTPsConfig {
     create_totps: boolean;
+    enabled: boolean;
+}
+export interface ConsumerUserImpersonationConfig {
+    /**
+     * Enable authenticating member impersonation tokens. Allow the SDK to authenticate a member impersonation
+     * token for a full session as an impersonated member.
+     */
     enabled: boolean;
 }
 export interface ConsumerWebAuthnConfig {
