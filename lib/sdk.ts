@@ -69,6 +69,12 @@ export interface B2BDFPPAConfig {
   enabled?: "ENABLED" | "PASSIVE" | "DISABLED" | string;
   // OnChallenge is the action to take when a DFPPA "challenge" verdict is returned.
   on_challenge?: "ALLOW" | "BLOCK" | "TRIGGER_CAPTCHA" | string;
+  /**
+   * FREEnabled is the Twilio Fraud Prevention setting for Device Fingerprinting Protected Auth in the SDK.
+   * It can only be turned on if the environment has a Twilio API key, and it cannot be stricter than the
+   * DFPPA setting.
+   */
+  fre_enabled?: "ENABLED" | "PASSIVE" | "DISABLED" | string;
 }
 
 export interface B2BMagicLinksConfig {
@@ -215,6 +221,12 @@ export interface ConsumerDFPPAConfig {
   enabled?: "ENABLED" | "PASSIVE" | "DISABLED" | string;
   // OnChallenge is the action to take when a DFPPA "challenge" verdict is returned.
   on_challenge?: "ALLOW" | "BLOCK" | "TRIGGER_CAPTCHA" | string;
+  /**
+   * FREEnabled is the Twilio Fraud Prevention setting for Device Fingerprinting Protected Auth in the SDK.
+   * It can only be turned on if the environment has a Twilio API key, and it cannot be stricter than the
+   * DFPPA setting.
+   */
+  fre_enabled?: "ENABLED" | "PASSIVE" | "DISABLED" | string;
 }
 
 export interface ConsumerMagicLinksConfig {

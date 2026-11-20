@@ -38,6 +38,12 @@ export interface B2BCookiesConfig {
 export interface B2BDFPPAConfig {
     enabled?: "ENABLED" | "PASSIVE" | "DISABLED" | string;
     on_challenge?: "ALLOW" | "BLOCK" | "TRIGGER_CAPTCHA" | string;
+    /**
+     * FREEnabled is the Twilio Fraud Prevention setting for Device Fingerprinting Protected Auth in the SDK.
+     * It can only be turned on if the environment has a Twilio API key, and it cannot be stricter than the
+     * DFPPA setting.
+     */
+    fre_enabled?: "ENABLED" | "PASSIVE" | "DISABLED" | string;
 }
 export interface B2BMagicLinksConfig {
     enabled: boolean;
@@ -140,6 +146,12 @@ export interface ConsumerCryptoWalletsConfig {
 export interface ConsumerDFPPAConfig {
     enabled?: "ENABLED" | "PASSIVE" | "DISABLED" | string;
     on_challenge?: "ALLOW" | "BLOCK" | "TRIGGER_CAPTCHA" | string;
+    /**
+     * FREEnabled is the Twilio Fraud Prevention setting for Device Fingerprinting Protected Auth in the SDK.
+     * It can only be turned on if the environment has a Twilio API key, and it cannot be stricter than the
+     * DFPPA setting.
+     */
+    fre_enabled?: "ENABLED" | "PASSIVE" | "DISABLED" | string;
 }
 export interface ConsumerMagicLinksConfig {
     login_or_create_enabled: boolean;

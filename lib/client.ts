@@ -12,6 +12,7 @@ import { EventLogStreaming } from "./event_log_streaming";
 import { JWTTemplates } from "./jwttemplates";
 import { PasswordStrengthConfig } from "./passwordstrengthconfig";
 import { Projects } from "./projects";
+import { ProjectTwilioAPIKeysService } from "./project_twilio_api_keys";
 import { PublicTokens } from "./publictokens";
 import { RBACPolicy } from "./rbacpolicy";
 import { RedirectURLs } from "./redirecturls";
@@ -27,6 +28,7 @@ export class ManagementClient extends BaseClient {
   eventLogStreaming: EventLogStreaming;
   jwtTemplates: JWTTemplates;
   passwordStrengthConfig: PasswordStrengthConfig;
+  projectTwilioAPIKeysService: ProjectTwilioAPIKeysService;
   publicTokens: PublicTokens;
   rbacPolicy: RBACPolicy;
   redirectURLs: RedirectURLs;
@@ -44,6 +46,9 @@ export class ManagementClient extends BaseClient {
     this.eventLogStreaming = new EventLogStreaming(this.fetchConfig);
     this.jwtTemplates = new JWTTemplates(this.fetchConfig);
     this.passwordStrengthConfig = new PasswordStrengthConfig(this.fetchConfig);
+    this.projectTwilioAPIKeysService = new ProjectTwilioAPIKeysService(
+      this.fetchConfig
+    );
     this.publicTokens = new PublicTokens(this.fetchConfig);
     this.rbacPolicy = new RBACPolicy(this.fetchConfig);
     this.redirectURLs = new RedirectURLs(this.fetchConfig);
