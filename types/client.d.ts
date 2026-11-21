@@ -6,6 +6,7 @@ import { EventLogStreaming } from "./event_log_streaming";
 import { JWTTemplates } from "./jwttemplates";
 import { PasswordStrengthConfig } from "./passwordstrengthconfig";
 import { Projects } from "./projects";
+import { ProjectTwilioAPIKeys } from "./project_twilio_api_keys";
 import { PublicTokens } from "./publictokens";
 import { RBACPolicy } from "./rbacpolicy";
 import { RedirectURLs } from "./redirecturls";
@@ -20,6 +21,7 @@ export declare class ManagementClient extends BaseClient {
     eventLogStreaming: EventLogStreaming;
     jwtTemplates: JWTTemplates;
     passwordStrengthConfig: PasswordStrengthConfig;
+    projectTwilioAPIKeys: ProjectTwilioAPIKeys;
     publicTokens: PublicTokens;
     rbacPolicy: RBACPolicy;
     redirectURLs: RedirectURLs;
